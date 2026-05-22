@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flair — Log flights. Share journeys.</title>
+  <meta name="description" content="Flair is the social flight tracker for people who love to travel. Log your flights, share trips, and connect with travelers on your routes." />
+  <link rel="icon" type="image/png" href="icon.png" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #07080C;
+      --surface:  #12141A;
+      --card:     #1A1C24;
+      --accent:   #A78BFA;
+      --accent2:  #F472B6;
+      --text:     #F4F4F6;
+      --muted:    #8A8FA8;
+      --sep:      rgba(255,255,255,0.08);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 40px;
+      background: rgba(7,8,12,0.80);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--sep);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo img { width: 26px; height: 26px; }
+    .nav-logo span { font-size: 18px; font-weight: 800; color: var(--text); letter-spacing: -0.5px; }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    nav a.nav-link {
+      color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500;
+      transition: color 0.2s;
+    }
+    nav a.nav-link:hover { color: var(--text); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      padding: 120px 24px 80px;
+      position: relative; overflow: hidden;
+    }
+    .hero-glow {
+      position: absolute; top: -200px; left: 50%; transform: translateX(-50%);
+      width: 800px; height: 800px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(167,139,250,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: 1100px; width: 100%;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 60px; position: relative;
+    }
+    .hero-text { flex: 1; max-width: 520px; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(167,139,250,0.12); border: 1px solid rgba(167,139,250,0.25);
+      border-radius: 20px; padding: 6px 14px; margin-bottom: 28px;
+      font-size: 12px; font-weight: 700; color: var(--accent); letter-spacing: 0.5px;
+    }
+    .hero-badge::before { content: '✦'; font-size: 10px; }
+    h1 {
+      font-size: clamp(40px, 6vw, 68px);
+      font-weight: 900; line-height: 1.05; letter-spacing: -2px;
+      margin-bottom: 24px;
+    }
+    h1 span {
+      background: linear-gradient(135deg, #C084FC 0%, #F472B6 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-sub {
+      font-size: 18px; line-height: 1.65; color: var(--muted);
+      margin-bottom: 40px; font-weight: 400;
+    }
+    .hero-cta {
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: linear-gradient(135deg, #A78BFA, #F472B6);
+      color: #fff; text-decoration: none;
+      padding: 14px 28px; border-radius: 14px;
+      font-size: 15px; font-weight: 700; letter-spacing: -0.2px;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+    .btn-secondary {
+      color: var(--muted); text-decoration: none;
+      font-size: 14px; font-weight: 500;
+      transition: color 0.2s;
+    }
+    .btn-secondary:hover { color: var(--text); }
+
+    /* ── PHONE MOCKUP ── */
+    .phone-wrap {
+      flex-shrink: 0; position: relative;
+      display: flex; justify-content: center;
+    }
+    .phone-glow {
+      position: absolute; top: 10%; left: 50%; transform: translateX(-50%);
+      width: 320px; height: 500px; border-radius: 50%;
+      background: radial-gradient(ellipse, rgba(167,139,250,0.18) 0%, transparent 70%);
+      pointer-events: none; filter: blur(30px);
+    }
+    .phone-frame {
+      position: relative; z-index: 1;
+      width: 260px;
+      background: #1A1C24;
+      border-radius: 44px;
+      padding: 10px;
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,0.1),
+        0 40px 80px rgba(0,0,0,0.7),
+        inset 0 1px 0 rgba(255,255,255,0.08);
+    }
+    .phone-screen {
+      border-radius: 36px; overflow: hidden;
+      width: 100%;
+    }
+    .phone-screen img { display: block; width: 100%; }
+
+    /* ── FEATURES ── */
+    .features {
+      padding: 100px 24px;
+      max-width: 1100px; margin: 0 auto;
+    }
+    .section-label {
+      text-align: center; font-size: 11px; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 16px;
+    }
+    .section-title {
+      text-align: center; font-size: clamp(28px, 4vw, 42px);
+      font-weight: 800; letter-spacing: -1px; margin-bottom: 64px;
+    }
+    .feature-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .feature-card {
+      background: var(--card);
+      border: 1px solid var(--sep);
+      border-radius: 20px; padding: 28px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .feature-card:hover { border-color: rgba(167,139,250,0.3); transform: translateY(-2px); }
+    .feature-icon {
+      width: 44px; height: 44px; border-radius: 12px;
+      background: rgba(167,139,250,0.12);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; margin-bottom: 18px;
+    }
+    .feature-card h3 {
+      font-size: 17px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.3px;
+    }
+    .feature-card p { font-size: 14px; line-height: 1.65; color: var(--muted); }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--sep);
+      padding: 40px 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 20px;
+    }
+    .footer-logo { display: flex; align-items: center; gap: 8px; }
+    .footer-logo img { width: 20px; height: 20px; }
+    .footer-logo span { font-size: 15px; font-weight: 800; }
+    .footer-links { display: flex; gap: 28px; }
+    .footer-links a {
+      color: var(--muted); text-decoration: none; font-size: 13px;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--text); }
+    .footer-copy { color: var(--muted); font-size: 13px; }
+
+    @media (max-width: 768px) {
+      nav { padding: 16px 20px; }
+      .nav-links { gap: 16px; }
+      .nav-links a.nav-link { display: none; }
+      .hero-inner { flex-direction: column; text-align: center; }
+      .hero-cta { justify-content: center; }
+      .phone-wrap { order: -1; }
+      .phone-frame { width: 220px; }
+      footer { flex-direction: column; align-items: flex-start; padding: 32px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-logo">
+      <img src="mark.png" alt="Flair" />
+      <span>Flair</span>
+    </a>
+    <div class="nav-links">
+      <a href="#features" class="nav-link">Features</a>
+      <a href="privacy.html" class="nav-link">Privacy</a>
+      <a href="mailto:support@flairapp.org" class="nav-link">Support</a>
+      <a href="mailto:support@flairapp.org" class="btn-primary" style="padding:9px 20px;font-size:13px;border-radius:10px;">Get Early Access</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="hero-badge">Coming to the App Store</div>
+        <h1>Log flights.<br /><span>Share journeys.</span></h1>
+        <p class="hero-sub">
+          Flair is the social flight tracker for people who love to travel.
+          Log every flight, share trip memories, and see who's flying the same routes as you.
+        </p>
+        <div class="hero-cta">
+          <a href="mailto:support@flairapp.org" class="btn-primary">
+            ✦ &nbsp;Get Early Access
+          </a>
+          <a href="mailto:support@flairapp.org" class="btn-secondary">Contact us →</a>
+        </div>
+      </div>
+
+      <div class="phone-wrap">
+        <div class="phone-glow"></div>
+        <div class="phone-frame">
+          <div class="phone-screen">
+            <img src="screenshot1.png" alt="Flair app screenshot" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features" id="features">
+    <p class="section-label">Everything you need</p>
+    <h2 class="section-title">Built for frequent flyers</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-icon">✈️</div>
+        <h3>Log every flight</h3>
+        <p>Track upcoming, live, and past flights in one place. Add photos, notes, and flight numbers to build your travel history.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🌍</div>
+        <h3>See your world</h3>
+        <p>Watch your globe fill in as you travel. Track countries, airports, and routes you've flown across your lifetime.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">👥</div>
+        <h3>Connect with travelers</h3>
+        <p>Follow friends, discover who's on your same route, and see when fellow travelers are on your flight.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔒</div>
+        <h3>Privacy built in</h3>
+        <p>Control who sees each flight — public, followers only, or private. Your trip, your rules.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📸</div>
+        <h3>Trip memories</h3>
+        <p>Attach photos to each leg of your trip and build a visual journal of everywhere you've been.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>Auto airport detection</h3>
+        <p>Flair can detect when you're at an airport and log your time automatically — no manual entry needed.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">
+      <img src="mark.png" alt="Flair" />
+      <span>Flair</span>
+    </div>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="mailto:support@flairapp.org">Support</a>
+    </div>
+    <p class="footer-copy">© 2026 Flair. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

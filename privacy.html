@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Flair</title>
+  <link rel="icon" type="image/png" href="icon.png" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #07080C;
+      --surface: #12141A;
+      --card:    #1A1C24;
+      --accent:  #A78BFA;
+      --text:    #F4F4F6;
+      --muted:   #8A8FA8;
+      --sub:     #C4C8D8;
+      --sep:     rgba(255,255,255,0.08);
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 40px;
+      background: rgba(7,8,12,0.80);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--sep);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo img { width: 24px; height: 24px; }
+    .nav-logo span { font-size: 17px; font-weight: 800; color: var(--text); letter-spacing: -0.5px; }
+
+    .container {
+      max-width: 680px; margin: 0 auto;
+      padding: 120px 24px 80px;
+    }
+
+    .page-label {
+      font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 12px;
+    }
+    h1 {
+      font-size: 36px; font-weight: 900; letter-spacing: -1px;
+      margin-bottom: 8px;
+    }
+    .last-updated {
+      font-size: 13px; color: var(--muted); margin-bottom: 52px;
+    }
+
+    .section {
+      margin-bottom: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--sep);
+    }
+    .section:last-child { border-bottom: none; }
+
+    .section h2 {
+      font-size: 18px; font-weight: 700; letter-spacing: -0.3px;
+      margin-bottom: 12px; color: var(--text);
+    }
+    .section p {
+      font-size: 15px; line-height: 1.75; color: var(--sub);
+      white-space: pre-line;
+    }
+    .section ul {
+      margin: 12px 0 0 0; padding-left: 0; list-style: none;
+    }
+    .section ul li {
+      font-size: 15px; line-height: 1.75; color: var(--sub);
+      padding-left: 18px; position: relative; margin-bottom: 4px;
+    }
+    .section ul li::before {
+      content: '•'; position: absolute; left: 0; color: var(--accent);
+    }
+
+    footer {
+      border-top: 1px solid var(--sep);
+      padding: 32px 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 16px;
+    }
+    .footer-logo { display: flex; align-items: center; gap: 8px; }
+    .footer-logo img { width: 18px; height: 18px; }
+    .footer-logo span { font-size: 14px; font-weight: 800; }
+    footer a { color: var(--muted); text-decoration: none; font-size: 13px; }
+    footer a:hover { color: var(--text); }
+    .footer-copy { color: var(--muted); font-size: 13px; }
+
+    @media (max-width: 600px) {
+      nav { padding: 16px 20px; }
+      footer { padding: 28px 20px; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo">
+      <img src="mark.png" alt="Flair" />
+      <span>Flair</span>
+    </a>
+    <div style="display:flex;align-items:center;gap:24px;">
+      <a href="/#features" style="color:var(--muted);text-decoration:none;font-size:14px;font-weight:500;">Features</a>
+      <a href="privacy.html" style="color:var(--text);text-decoration:none;font-size:14px;font-weight:600;">Privacy</a>
+      <a href="mailto:support@flairapp.org" style="color:var(--muted);text-decoration:none;font-size:14px;font-weight:500;">Support</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <p class="page-label">Legal</p>
+    <h1>Privacy Policy</h1>
+    <p class="last-updated">Last updated: April 2026</p>
+
+    <div class="section">
+      <h2>Introduction</h2>
+      <p>Flair ("we," "our," or "us") is a social travel app that lets you log flights, share trip memories, and connect with other travelers. This Privacy Policy explains what information we collect, how we use it, and your choices.
+
+By using Flair, you agree to the practices described here. If you do not agree, please do not use the app.</p>
+    </div>
+
+    <div class="section">
+      <h2>Information We Collect</h2>
+      <p><strong style="color:var(--text)">Account information</strong> — When you create an account, we collect your name, username, email address, and optional profile photo.
+
+<strong style="color:var(--text)">Flight data</strong> — When you log a flight, we store the departure and destination airports, flight number, date, duration, notes, photos you attach, and the privacy setting you choose (Public, Followers, or Private).
+
+<strong style="color:var(--text)">Usage data</strong> — We collect standard usage analytics such as which features you use and how often, to help us improve the app. This data is aggregated and not tied to your identity.
+
+<strong style="color:var(--text)">Device information</strong> — We may collect your device type, operating system version, and app version for debugging purposes.</p>
+    </div>
+
+    <div class="section">
+      <h2>How We Use Your Information</h2>
+      <p>We use your information to:</p>
+      <ul>
+        <li>Operate and personalize your Flair experience</li>
+        <li>Show your flights and profile to other users based on your privacy settings</li>
+        <li>Send notifications about followers and flight activity</li>
+        <li>Improve app features and fix bugs</li>
+        <li>Comply with legal obligations</li>
+      </ul>
+      <p style="margin-top:16px">We do not sell your personal information to third parties.</p>
+    </div>
+
+    <div class="section">
+      <h2>Privacy Settings</h2>
+      <p>Every flight you log has a privacy setting you control:
+
+<strong style="color:var(--text)">Public</strong> — Visible to anyone using Flair.
+<strong style="color:var(--text)">Followers</strong> — Visible only to users who follow you.
+<strong style="color:var(--text)">Private</strong> — Visible only to you.
+
+Your profile (name, username, bio, and photo) is public by default. You can switch your account to private in Settings, which restricts your posts to approved followers only.</p>
+    </div>
+
+    <div class="section">
+      <h2>Photos</h2>
+      <p>Photos you upload to Flair are stored securely on our servers. Photos attached to Public or Followers-only flights may be visible to other users according to your privacy setting. We do not use your photos to train AI models or share them with advertising networks.
+
+You can delete a flight and its photos at any time from the app.</p>
+    </div>
+
+    <div class="section">
+      <h2>Third-Party Services</h2>
+      <p>Flair is built on Supabase, which provides our database and file storage infrastructure. Supabase processes data on our behalf in accordance with their privacy policy and data processing agreements.
+
+We may use third-party analytics tools to understand app usage. These tools receive anonymized, aggregated data only.</p>
+    </div>
+
+    <div class="section">
+      <h2>Data Retention</h2>
+      <p>We retain your account data for as long as your account is active. If you delete your account, we will delete your personal information, flights, and photos within 30 days, except where retention is required by law.
+
+Deleted flights are moved to a trash bin for 30 days before permanent deletion, giving you a window to restore them.</p>
+    </div>
+
+    <div class="section">
+      <h2>Your Rights</h2>
+      <p>Depending on where you live, you may have the right to:</p>
+      <ul>
+        <li>Access the personal data we hold about you</li>
+        <li>Correct inaccurate data</li>
+        <li>Request deletion of your data</li>
+        <li>Export your data in a portable format</li>
+        <li>Opt out of certain data processing</li>
+      </ul>
+      <p style="margin-top:16px">To exercise any of these rights, contact us at the email below.</p>
+    </div>
+
+    <div class="section">
+      <h2>Children</h2>
+      <p>Flair is not directed to children under 13. We do not knowingly collect personal information from anyone under 13. If you believe a child has provided us information, please contact us and we will delete it promptly.</p>
+    </div>
+
+    <div class="section">
+      <h2>Changes to This Policy</h2>
+      <p>We may update this policy from time to time. When we do, we will update the "Last updated" date at the top of this page and, for material changes, notify you via the app or email.</p>
+    </div>
+
+    <div class="section">
+      <h2>Contact Us</h2>
+      <p>If you have questions or concerns about this Privacy Policy, please reach out:
+
+Email: <a href="mailto:support@flairapp.org" style="color:var(--accent)">support@flairapp.org</a></p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo">
+      <img src="mark.png" alt="Flair" />
+      <span>Flair</span>
+    </div>
+    <a href="/">← Back to Flair</a>
+    <p class="footer-copy">© 2026 Flair. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
