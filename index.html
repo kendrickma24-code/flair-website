@@ -158,9 +158,15 @@
       background: var(--card);
       border: 1px solid var(--sep);
       border-radius: 20px; padding: 28px;
-      transition: border-color 0.2s, transform 0.2s;
+      transition: border-color 0.2s, transform 0.2s, background 0.2s, box-shadow 0.2s;
+      cursor: default;
     }
-    .feature-card:hover { border-color: rgba(167,139,250,0.3); transform: translateY(-2px); }
+    .feature-card:hover {
+      border-color: rgba(167,139,250,0.5);
+      background: rgba(167,139,250,0.07);
+      box-shadow: 0 0 0 1px rgba(167,139,250,0.15), 0 8px 32px rgba(167,139,250,0.08);
+      transform: translateY(-2px);
+    }
     .feature-icon {
       width: 44px; height: 44px; border-radius: 12px;
       background: rgba(167,139,250,0.12);
