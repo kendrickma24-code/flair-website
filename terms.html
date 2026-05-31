@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Use — Flair</title>
+  <link rel="icon" type="image/png" href="icon.png" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #07080C;
+      --surface: #12141A;
+      --card:    #1A1C24;
+      --accent:  #A78BFA;
+      --text:    #F4F4F6;
+      --muted:   #8A8FA8;
+      --sub:     #C4C8D8;
+      --sep:     rgba(255,255,255,0.08);
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 40px;
+      background: rgba(7,8,12,0.80);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--sep);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo img { width: 24px; height: 24px; }
+    .nav-logo span { font-size: 17px; font-weight: 800; color: var(--text); letter-spacing: -0.5px; }
+
+    .container {
+      max-width: 680px; margin: 0 auto;
+      padding: 120px 24px 80px;
+    }
+
+    .page-label {
+      font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 12px;
+    }
+    h1 {
+      font-size: 36px; font-weight: 900; letter-spacing: -1px;
+      margin-bottom: 8px;
+    }
+    .last-updated {
+      font-size: 13px; color: var(--muted); margin-bottom: 52px;
+    }
+
+    .section {
+      margin-bottom: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--sep);
+    }
+    .section:last-child { border-bottom: none; }
+
+    .section h2 {
+      font-size: 18px; font-weight: 700; letter-spacing: -0.3px;
+      margin-bottom: 12px; color: var(--text);
+    }
+    .section p {
+      font-size: 15px; line-height: 1.75; color: var(--sub);
+    }
+    .section ul {
+      margin: 12px 0 0 0; padding-left: 0; list-style: none;
+    }
+    .section ul li {
+      font-size: 15px; line-height: 1.75; color: var(--sub);
+      padding-left: 18px; position: relative; margin-bottom: 4px;
+    }
+    .section ul li::before {
+      content: '•'; position: absolute; left: 0; color: var(--accent);
+    }
+
+    .zero-tolerance {
+      background: rgba(239,68,68,0.07);
+      border: 1px solid rgba(239,68,68,0.2);
+      border-radius: 14px; padding: 20px 24px; margin-top: 16px;
+    }
+    .zero-tolerance p {
+      color: #FCA5A5;
+    }
+    .zero-tolerance ul li { color: #FCA5A5; }
+    .zero-tolerance ul li::before { color: #EF4444; }
+
+    footer {
+      border-top: 1px solid var(--sep);
+      padding: 32px 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 16px;
+    }
+    .footer-logo { display: flex; align-items: center; gap: 8px; }
+    .footer-logo img { width: 18px; height: 18px; }
+    .footer-logo span { font-size: 14px; font-weight: 800; }
+    footer a { color: var(--muted); text-decoration: none; font-size: 13px; }
+    footer a:hover { color: var(--text); }
+    .footer-copy { color: var(--muted); font-size: 13px; }
+
+    @media (max-width: 600px) {
+      nav { padding: 16px 20px; }
+      footer { padding: 28px 20px; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo">
+      <img src="mark.png" alt="Flair" />
+      <span>Flair</span>
+    </a>
+    <div style="display:flex;align-items:center;gap:24px;">
+      <a href="/#features" style="color:var(--muted);text-decoration:none;font-size:14px;font-weight:500;">Features</a>
+      <a href="/#safety" style="color:var(--muted);text-decoration:none;font-size:14px;font-weight:500;">Safety</a>
+      <a href="privacy.html" style="color:var(--muted);text-decoration:none;font-size:14px;font-weight:500;">Privacy</a>
+      <a href="terms.html" style="color:var(--text);text-decoration:none;font-size:14px;font-weight:600;">Terms</a>
+      <a href="mailto:support@flairapp.org" style="color:var(--muted);text-decoration:none;font-size:14px;font-weight:500;">Support</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <p class="page-label">Legal</p>
+    <h1>Terms of Use &amp; Community Guidelines</h1>
+    <p class="last-updated">Last updated: May 2026</p>
+
+    <div class="section">
+      <h2>1. Acceptance of Terms</h2>
+      <p>By creating an account or using Flair, you agree to these Terms of Use and our Community Guidelines. Users are required to accept these terms before registering. If you do not agree, do not use the app.</p>
+    </div>
+
+    <div class="section">
+      <h2>2. User-Generated Content</h2>
+      <p>Flair allows users to share flight activity, photos, and profile information. You are solely responsible for the content you post. By posting content, you grant Flair a non-exclusive license to display that content within the app.</p>
+    </div>
+
+    <div class="section">
+      <h2>3. Zero Tolerance for Objectionable Content</h2>
+      <p>Flair has a strict zero-tolerance policy for objectionable content and abusive behavior. The following are strictly prohibited:</p>
+      <div class="zero-tolerance">
+        <ul>
+          <li>Harassment, bullying, or threats of any kind</li>
+          <li>Hate speech based on race, ethnicity, religion, gender, sexual orientation, disability, or nationality</li>
+          <li>Sexually explicit or violent content</li>
+          <li>Spam, scams, or misleading information</li>
+          <li>Content that violates any applicable law</li>
+        </ul>
+        <p style="margin-top:12px;">Violations may result in immediate account suspension or permanent removal without notice.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>4. Reporting Objectionable Content</h2>
+      <p>You may report any post you believe violates these guidelines using the report option available on every post (tap the ••• menu on any flight card). Reported content is immediately hidden from your feed. Our team is notified of every report and will review and take appropriate action, which may include content removal or account suspension.</p>
+    </div>
+
+    <div class="section">
+      <h2>5. Blocking Abusive Users</h2>
+      <p>You may block any user from their profile page. Blocking a user immediately:</p>
+      <ul>
+        <li>Removes all of their content from your feed</li>
+        <li>Prevents them from viewing your profile or content</li>
+        <li>Prevents any further interaction between your accounts</li>
+        <li>Notifies our moderation team so the account can be reviewed</li>
+      </ul>
+      <p style="margin-top:12px;">Blocked users are not informed that they have been blocked.</p>
+    </div>
+
+    <div class="section">
+      <h2>6. Account Deletion</h2>
+      <p>You may delete your account at any time from Settings → Delete Account. Account deletion is permanent and irreversible. All your data, flights, and profile information will be deleted from our servers.</p>
+    </div>
+
+    <div class="section">
+      <h2>7. Privacy</h2>
+      <p>Your privacy matters to us. Please review our <a href="privacy.html" style="color:var(--accent)">Privacy Policy</a> to understand how we collect, use, and protect your data.</p>
+    </div>
+
+    <div class="section">
+      <h2>8. Changes to Terms</h2>
+      <p>We may update these Terms from time to time. Continued use of Flair after changes constitutes acceptance of the new Terms.</p>
+    </div>
+
+    <div class="section">
+      <h2>Contact</h2>
+      <p>Questions or concerns? Contact us at <a href="mailto:support@flairapp.org" style="color:var(--accent)">support@flairapp.org</a></p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo">
+      <img src="mark.png" alt="Flair" />
+      <span>Flair</span>
+    </div>
+    <a href="/">← Back to Flair</a>
+    <p class="footer-copy">© 2026 Flair. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
